@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div.warehouse-table {
+    width: 650px;
+    border: 1px navy solid;
+}
+
+section.grid-row {
+    display: grid;
+    /* width: 100vw; */
+    width: 100%;
+    grid-auto-flow: column;
+    grid-template-areas: "whouse avail ex-date on-ord on-res trigger total-stock status type cost value";
+    grid-template-columns: 8em 5em 5em 5em 5em 4em 4em;
+    grid-column-gap: .5em;
+    grid-template-rows: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+section.grid-row > div {
+    padding-left: .3em;
+    padding-bottom: .3em; 
+    padding-right: .3em;
+ }
+ 
+ /* Give first data row top padding. */
+ div.warehouse-table section:nth-child(2) {
+    padding-top: .3em;
+ }
+
+div.warehouse-table section:not(.heading-row):nth-child(odd) {
+    background-color: lightgray;
+}
+.avail, .ex-date, .on-ord, .on-res, .trigger, .total-stock {
+    justify-self: end;
+    text-align: right;
+}
+
+section.heading-row {
+    background-color: navy;
+    color: white;
+}
+
+.heading {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    vertical-align: bottom;
+    align-self: flex-end;
+ }
+
+ .minus {
+     background-color: red;
+     color: white;
+ } 
